@@ -1,3 +1,5 @@
+package teksystems.java.exercise;
+
 public class JavaBasicsClass {
     // Write a program that declares 2 integer variables, assigns an integer to each,
     // and adds them together. Assign the sum to a variable. Print out the result.
