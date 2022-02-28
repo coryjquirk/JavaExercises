@@ -34,54 +34,66 @@ public class LoopsExercises {
     // Use the “continue” statement to accomplish this.
     static void forLoopFivesSkip25to75(){
         System.out.println("forLoopFivesSkip25to75: ");
-        int i = 0;
-
-        for (i = 0; i <= 100;){
-            if (i % 5 == 0){
+        for (int i = 0; i <= 100; i++){
+            if (i % 5 == 0 && ((i <= 25) || (i >= 75))){
                 System.out.println(i);
             }
-            i++;
+        }
+    }
+    // Write a program that uses a for-loop to loop through the numbers 1-100.
+    // Print out each number if is a multiple of 5, but do not print out any numbers greater than 50.
+    // Use the “break” keyword to accomplish this.
+    static void forLoopFivesSkipsFiftyPlus(){
+        System.out.println("forLoopFivesSkipsFiftyPlus: ");
+        for (int i = 0; i <= 100; i++){
+            if(i > 50){
+                break;
+            } else if (i % 5 == 0){
+                System.out.println(i);
+            }
+        }
+    }
+    //Write a program that uses nested for-loops to output the following:
+    //Week 1:
+    //Day 1
+    //Day 2
+    //Day 3
+    //Day 4
+    //Day 5
+    //Week 2:
+    //Day 1
+    //Day 2
+    //Day 3
+    //Day 4
+    //Day 5
+    static void twoWorkWeeks(){
+        System.out.println("twoWorkWeeks: ");
+        for(int i = 1; i <= 2; i++){
+            System.out.println("Week " + i + ":");
+            for (int j = 1; j <= 5; j++){
+                System.out.println("Day " + j);
+            }
         }
     }
 
-    //Write a program that uses a for-loop to loop through the numbers 1-100. Print out each number if is a multiple of 5, but do not print out any numbers greater than 50. Use the “break” keyword to accomplish this.
-    //
-    //
-    //Write a program that uses nested for-loops to output the following:
-    //Week 1:
-    //
-    //Day 1
-    //
-    //Day 2
-    //
-    //Day 3
-    //
-    //Day 4
-    //
-    //Day 5
-    //
-    //Week 2:
-    //
-    //Day 1
-    //
-    //Day 2
-    //
-    //Day 3
-    //
-    //Day 4
-    //
-    //Day 5
-    //
-    //
-    //
     //Write a program that returns all the available palindromes within 10 and 200. The following output will be produced:
     //11, 22, 33, 44, 55, 66, 77, 88, 99, 101, 111, 121, 131, 141, 151, 161, 171, 181, 191,
-    public void Palindrome(){
+    static void palindromeNums(){
+        System.out.println("palindromeNums: ");
         for(int palindrome = 10; palindrome < 201; palindrome++){
             String intStr = String.valueOf(palindrome);
+            System.out.println(intStr);
             // reverse intStr, store it as a variable,
             // compare reversed string with intStr
             // print if they're equal
+            for (int i = 0; i < intStr.length(); i++){
+                System.out.println("i: " + i);
+                System.out.println("char at i: " + intStr.charAt(i));
+            }
+            for (int j = intStr.length() - 1; j >= 0; j--){
+                System.out.println("j: " + j);
+                System.out.println("char at j: " + intStr.charAt(j));
+            }
         }
     }
 
@@ -96,5 +108,8 @@ public class LoopsExercises {
         hundredLoop();
         doWhileTenLoop();
         forLoopFivesSkip25to75();
+        forLoopFivesSkipsFiftyPlus();
+        twoWorkWeeks();
+        palindromeNums();
     }
 }
