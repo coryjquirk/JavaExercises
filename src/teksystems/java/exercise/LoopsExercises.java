@@ -80,29 +80,47 @@ public class LoopsExercises {
     //11, 22, 33, 44, 55, 66, 77, 88, 99, 101, 111, 121, 131, 141, 151, 161, 171, 181, 191,
     static void palindromeNums(){
         System.out.println("palindromeNums: ");
-        for(int palindrome = 10; palindrome < 201; palindrome++){
-            String intStr = String.valueOf(palindrome);
-            System.out.println(intStr);
-            // reverse intStr, store it as a variable,
-            // compare reversed string with intStr
-            // print if they're equal
-            for (int i = 0; i < intStr.length(); i++){
-                System.out.println("i: " + i);
-                System.out.println("char at i: " + intStr.charAt(i));
+        // for loop that brings us from 10 to 200
+        // convert number to string with valueOf()
+        // new variable to store reversed string
+        // determine equivalency between OG and reversed.
+        // if equivalent, then print the original int.
+        for (int i = 10; i <= 200; i++){
+            String ogIntString = String.valueOf(i);
+            String reversedString = new StringBuilder(ogIntString).reverse().toString();
+            if (ogIntString.equals(reversedString)){
+                System.out.println("Palindrome!");
+                System.out.println(i);
             }
-            for (int j = intStr.length() - 1; j >= 0; j--){
-                System.out.println("j: " + j);
-                System.out.println("char at j: " + intStr.charAt(j));
+        }
+    }
+    //Write a program that prints the Fibonacci Sequence from 0 to 50.
+    // The following output will be produced: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
+    static void Fibonacci() {
+        System.out.println("~~~~Fibonacci function~~~~");
+        int num1 = 0, num2 = 1;
+        for (int counter = 0; counter <= 50; counter++){
+            System.out.print(num1 + " ");
+            int num3 = num2 + num1;
+            num1 = num2;
+            num2 = num3;
+            if(num1 > 50){
+                break;
+            }
+        }
+    }
+    // Write a program that nests a for-loop inside another.
+    // Print out the inner and outer variable (e.g., i or j) in the inner
+    // loop (e.g., System.out.println("Inner loop: i: " + i + ", j: " + j);).
+    static void nestedForLoops(){
+        System.out.println("===== Nested for loops up to 25 =====");
+        for(int i = 0; i <= 25; i++){
+            for (int j = 0; j <= 25; j++){
+                System.out.println("Inner loop: i: " + i + ", j: " + j);
             }
         }
     }
 
-    //
-    //
-    //Write a program that prints the Fibonacci Sequence from 0 to 50. The following output will be produced: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
-    //
-    //
-    //Write a program that nests a for-loop inside another. Print out the inner and outer variable (e.g., i or j) in the inner loop (e.g., System.out.println("Inner loop: i: " + i + ", j: " + j);).
     public static void main(String[] args) {
         tenLoop();
         hundredLoop();
@@ -111,5 +129,7 @@ public class LoopsExercises {
         forLoopFivesSkipsFiftyPlus();
         twoWorkWeeks();
         palindromeNums();
+        Fibonacci();
+        nestedForLoops();
     }
 }

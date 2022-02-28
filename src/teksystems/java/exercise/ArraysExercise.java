@@ -1,14 +1,30 @@
 package teksystems.java.exercise;
 
-public class ArraysExercise {
+import java.lang.reflect.Array;
 
-    //Write a program that creates an array of integers with a length of 3. Assign the values 1, 2, and 3 to the indexes. Print out each array element.
-    //
-    //
-    //Write a program that returns the middle element in an array. Give the following values to the integer array: {13, 5, 7, 68, 2} and produce the following output: 7
-    //
-    //
-    //Write a program that creates an array of String type and initializes it with the strings “red”, “green”, “blue” and “yellow”. Print out the array length. Make a copy using the clone( ) method. Use the Arrays.toString( ) method on the new array to verify that the original array was copied.
+public class ArraysExercise {
+    // Write a program that creates an array of integers with a length of 3.
+    // Assign the values 1, 2, and 3 to the indexes. Print out each array element.
+    static void intsLengthThree (){
+        System.out.println("intsLengthThree(): ");
+        int[] intArray = {1, 2, 3};
+        for (int i = 0; i < intArray.length; i++){
+            System.out.printf("Element at position %d: %d\n", i, intArray[i]);
+        }
+
+    }
+    // Write a program that returns the middle element in an array.
+    // Give the following values to the integer array: {13, 5, 7, 68, 2} and produce the following output: 7
+    static void middleElementOfArray(){
+        System.out.println("middleElementOfArray(): ");
+        int[] myArray = {13, 5, 7, 68, 2};
+        int midElementPos = myArray.length/2;
+        System.out.println("Middle element: " + myArray[midElementPos]);
+    }
+
+    // Write a program that creates an array of String type and initializes it with the strings “red”, “green”, “blue” and “yellow”.
+    // Print out the array length. Make a copy using the clone( ) method.
+    // Use the Arrays.toString( ) method on the new array to verify that the original array was copied.
     //
     //
     //Write a program that creates an integer array with 5 elements (i.e., numbers). The numbers can be any integers.  Print out the value at the first index and the last index using length - 1 as the index. Now try printing the value at index = length ( e.g., myArray[myArray.length ] ).  Notice the type of exception which is produced. Now try to assign a value to the array index 5. You should get the same type of exception.
@@ -37,6 +53,7 @@ public class ArraysExercise {
     //
     //Create an array that includes an integer, 3 strings, and 1 double. Print the array.
     public static void main(String[] args) {
-
+        intsLengthThree();
+        middleElementOfArray();
     }
 }
